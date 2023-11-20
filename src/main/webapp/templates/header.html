@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+    <div th:fragment="copy" class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+<a href="/"><img src="/static/img/cc_logo_transparent.png" alt="logo.png" height="50px" class="mr-4 pt-1 pb-1"></a>
+<h1 class="navbar-header mr-auto">Codecool Magic Shop</h1>
+<span class="text-white" th:text="'(' + ${itemsSum} + ')'"></span>
+<!--<div id="cart-button"><i class="clickable bi bi-cart3 text-end cart-icon"></i></div>-->
+        <div id="cart-button"><a href="/cart"><i class="clickable bi bi-cart3 text-end cart-icon"></i></a></div>
+
+    </div>
+
+</body>
+</html>

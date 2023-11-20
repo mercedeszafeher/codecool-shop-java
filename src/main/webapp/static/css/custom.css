@@ -1,0 +1,159 @@
+.body {
+    background: #ddd;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.glyphicon {
+    margin-right:5px;
+}
+.thumbnail
+{
+    margin-bottom: 20px;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+.thumbnail img
+{
+    margin-top: 10px;
+}
+.item.list-group-item
+{
+    float: none;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover
+{
+    background: #428bca;
+}
+
+.item.list-group-item .list-group-image
+{
+    margin-right: 10px;
+}
+.item.list-group-item .thumbnail
+{
+    margin-bottom: 0px;
+}
+.item.list-group-item .caption
+{
+    padding: 9px 9px 0px 9px;
+}
+.item.list-group-item:nth-of-type(odd)
+{
+    background: #eeeeee;
+}
+
+.item.list-group-item:before, .item.list-group-item:after
+{
+    display: table;
+    content: " ";
+}
+
+.item.list-group-item img
+{
+    float: left;
+}
+.item.list-group-item:after
+{
+    clear: both;
+}
+.list-group-item-text
+{
+    margin: 0 0 11px;
+}
+
+.h-70px {
+    height: 70px;
+}
+
+.navbar-header {
+    color: white;
+    font-size: 2em;
+    padding-top: 5px;
+}
+
+.cart-icon {
+    color:white;
+    font-size: 1.8em;
+}
+
+#shopping-cart {
+    position: fixed;
+    top: 80px;
+    right: 10px;
+    width: 400px;
+    height: 500px;
+}
+
+.cart-header {
+    display: flex;
+}
+
+.cart-header-text {
+    margin-bottom: 0;
+}
+
+#single-product {
+    display: flex;
+}
+
+.cart-text {
+    width: 50%;
+}
+
+.amount {
+    width: 10%;
+    line-height: 1.2em;
+}
+
+.price {
+    width: 20%;
+    line-height: 1.2em;
+}
+
+#cart-footer {
+    width: 90%;
+    position: absolute;
+    bottom: 5px;
+    text-align: center;
+}
+
+.pb-100 {
+    padding-bottom: 100px;
+}
+
+.mh-290 {
+    min-height: 290px;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.card {
+    box-shadow: 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.total-price {
+    position: absolute;
+    bottom: 4vh;
+    right: 5vh;
+}
+
+.mh-700 {
+    min-height: 700px;
+}
+
+.btn-checkout {
+    position: absolute;
+    bottom: 0;
+}
+
+#payment-form {
+    height: 410px;
+    position: relative;
+}

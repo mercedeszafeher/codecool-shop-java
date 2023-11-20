@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Codecool" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Codecool Shop</title>
+
+    <!-- Bootstrap components -->
+    <!-- Latest compiled and minified Jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <!--Latest compiled and minified Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- End of Bootstrap components -->
+
+    <!-- Icon components -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" type="text/css" href="/static/css/custom.css" />
+
+    <script src="static/js/cart.js" defer></script>
+</head>
+
+<body>
+
+<div th:replace="header.html :: copy"></div>
+
+<div class="container pb-100">
+    <div class="h-70px">
+        <div class="dropdown float-left mr-1">
+            <button th:text="(${categoryName} == null) ? 'Choose category' : ${categoryName}"
+                    class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+            </button>
+            <div class="dropdown-menu">
+                <a href="/" class="dropdown-item text-muted">Reset</a>
+                <a th:each="category: ${categories}"
+                   th:text="${category.getName()}"
+                   th:href="'?category=' + ${category.getName()}"
+                   class="dropdown-item"></a>
+            </div>
+        </div>
+        <div class="dropdown float-left">
+            <button th:text="(${supplierName} == null) ? 'Choose supplier' : ${supplierName}"
+                    class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+            </button>
+            <div class="dropdown-menu">
+                <a href="/" class="dropdown-item text-muted">Reset</a>
+                <a th:each="supplier: ${suppliers}"
+                   th:text="${supplier.getName()}"
+                   th:href="'?supplier=' + ${supplier.getName()}"
+                   class="dropdown-item"></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="products" class="row">
+        <div class="col col-sm-12 col-md-6 col-lg-4 mb-4" th:each="prod,iterStat : ${products}">
+            <div class="card h-100">
+                <img class="" src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/' + ${prod.imageName} + '.jpeg'" alt="" />
+                <div class="card-header mh-290">
+                    <h4 class="card-title" th:text="${prod.name}">Product name</h4>
+                    <span class="text-muted" data-toggle="tooltip" th:text="${prod.getDescription()}"></span>
+                </div>
+                <div class="card-body">
+                    <div class="card-text">
+                        <p class="lead" th:text="${prod.getPrice()}">100 USD</p>
+                    </div>
+                    <div class="card-text">
+                        <form action="/add-to-cart" method="POST">
+                            <button class="btn btn-success" name="item" th:value="${prod.getName()}">Add to cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+
+</div>
+
+<div th:replace="footer.html :: copy"></div>
+
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-Online Shop - Enhanced eCommerce Web Application
+CodeCool Online Shop - Enhanced eCommerce Web Application
 
 Welcome to the enhanced version of the Online Shop—an online eCommerce web application developed with Java. This project goes beyond the basics, providing users with an enriched shopping experience. Users can not only browse products, add them to a Shopping Cart, and complete the checkout process, but they can also log in to view their abandoned shopping carts and access their order history.
 
